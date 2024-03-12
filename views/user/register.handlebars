@@ -1,0 +1,63 @@
+{{#each erros}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form action="/user/registro" method="POST">
+
+            <h2 class="card-title text-center mb-4">Registro</h2>
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                placeholder="Seu nome"
+                required
+              />
+              <label for="floatingInput">Seu nome</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="name@example.com"
+                required
+              />
+              <label for="floatingInput">Endereço de Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                placeholder="Senha"
+                required
+              />
+              <label for="floatingPassword">Senha</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="password"
+                class="form-control"
+                name="password2"
+                placeholder="Digite sua senha novamente"
+                required
+              />
+              <label for="floatingPassword">Digite sua senha novamente</label>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary d-block mx-auto"
+            >Cadastrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<h2>Lista de Clientes</h2>
+<hr />
+<a href="/admin/clientes/add">
+  <button class="btn btn-success mt-1">Adicionar novo cliente</button>
+</a>
+
+{{#each clients}}
+  <div class="card mt-4">
+    <div class="card-body">
+      <h4>Cliente: {{name}}</h4>
+      <small>Número: {{cellphone}}</small>
+      <br />
+      <a href="/admin/clientes/edit/{{_id}}">
+        <button class="btn btn-success mt-2">Editar cliente</button>
+      </a>
+      <form action="/admin/clientes/deletar" method="POST">
+        <input type="hidden" name="id" value="{{_id}}" />
+        <button type="submit" class="btn btn-danger mt-2">Deletar</button>
+      </form>
+    </div>
+  </div>
+{{else}}
+  <h4 class="mt-4">Nenhum cliente registrado</h4>
+{{/each}}

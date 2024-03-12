@@ -1,0 +1,58 @@
+  <h2>Lista de serviços:</h2>
+  <hr />
+  <a href="/admin/servicos/add">
+    <button class="btn btn-success mt-1">Adicionar novo servico</button>
+  </a>
+
+<table class="table mt-4">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Slug</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Data</th>
+          <th scope="col">Descrição do serviço</th>
+        </tr>
+      </thead>
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Clique aqui para calcular o valor total dos serviços
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Lucro total</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Com base nos {{totalServices}} serviços feitos, o lucro total obtido é de:
+        R${{totalProfit}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+      
+  {{#each services}}
+      <tbody>
+        <tr>
+          <th scope="row">{{addOne @index}}</th>
+          <td>{{client.name}}</td>
+          <td>{{slug}}</td>
+          <td>{{value}}</td>
+          <td>{{date}}</td>
+          <td>{{description}}</td>
+          
+        </tr>
+      </tbody>
+  {{else}}
+</table>
+    <h4 class="mt-4">Nenhum serviço registrado</h4>
+  {{/each}}
+ 

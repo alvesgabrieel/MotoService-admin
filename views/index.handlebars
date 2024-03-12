@@ -1,0 +1,12 @@
+<div class="card mx-auto" style="width: 18rem;">
+  <img src="img/logosemfundo.png" class="card-img-top" alt="..." />
+  <div class="card-body text-center">
+    <h5 class="card-title">Painel administrativo MotoService</h5>
+    {{#if user}}
+      <a href="/user/logout" class="btn btn-danger">Sair</a>
+    {{else}}
+      <a href="/user/registro" class="btn btn-primary">Cadastrar</a>
+      <a href="/user/login" class="btn btn-success">Entrar</a>
+    {{/if}}
+  </div>
+</div>

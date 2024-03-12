@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form action="/user/login" method="POST">
+
+            <h2 class="card-title text-center mb-4">Login</h2>
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Digite seu email"
+                required
+              />
+              <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                placeholder="Digite sua senha"
+                required
+              />
+              <label for="floatingInput">Senha</label>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-success d-block mx-auto mt-4"
+            >Entrar</button>
+            <div class="d-flex justify-content-center mt-4">
+
+              <a href="/user/registro">
+                <p>
+                  Cadastrar
+                </p>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+{{#each erros}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+
+<h3>Editar serviço:</h3>
+<div class="card">
+  <div class="card-body">
+    <form action="/admin/servicos/edit" method="POST">
+      <input type="hidden" value="{{service._id}}" name="id" />
+      <label for="client">Nome do cliente:</label>
+      <select name="client" class="form-select">
+        {{#each client}}
+          <option value="{{_id}}">{{name}}</option>
+        {{else}}
+          <option value="">Nenhum cliente registrado</option>
+        {{/each}}
+      </select>
+      <label for="value">Valor do serviço:</label>
+      <input
+        type="number"
+        id="value"
+        name="value"
+        placeholder="Digite o valor do serviço"
+        class="form-control"
+        value="{{service.value}}"
+      />
+      <label for="description">Serviço:</label>
+      <textarea
+        name="description"
+        id="description"
+        placeholder="Digite aqui o serviço prestado"
+        class="form-control"
+      >{{service.description}}
+      </textarea>
+      <label for="description">Slug:</label>
+      <textarea
+        name="slug"
+        id="slug"
+        placeholder="Digite aqui o service-slug"
+        class="form-control"
+        value="{{service.slug}}"
+      ></textarea>
+      <button type="submit" class="btn btn-success mt-4">Adicionar serviço</button>
+    </form>
+  </div>
+</div>

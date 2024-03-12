@@ -1,0 +1,36 @@
+{{#each erros}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+<h3>Novo Cliente:</h3>
+<div class="card">
+  <div class="card-body">
+    <form action="/admin/clientes/novo" method="POST">
+      <label for="name">Nome:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Nome do cliente"
+        class="form-control"
+      />
+      <label for="cellphone">Celular:</label>
+      <input
+        type="number"
+        id="cellphone"
+        name="cellphone"
+        placeholder="Celular do cliente (84900000000)"
+        class="form-control"
+      />
+      <label for="cellphone">Slug:</label>
+      <input
+        type="text"
+        id="slug"
+        name="slug"
+        placeholder="slug do cliente"
+        class="form-control"
+      />
+      <button type="submit" class="btn btn-success mt-4">Adicionar cliente</button>
+    </form>
+  </div>
+</div>
